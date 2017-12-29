@@ -38,13 +38,19 @@ public class SwaggerConfig {
     private ApiInfo demoApiInfo() {
         Contact contact = new Contact("Angle", "http://blog.ylapl.cn", "1024920977@qq.com");
         return new ApiInfo(
-                "",//大标题
-                "",//小标题
-                "1.0",//版本
+                //大标题
+                "",
+                //小标题
+                "",
+                //版本
+                "1.0",
                 "逗神科技",
-                contact,//作者
-                "The Apache License, Version 2.0",//链接显示文字
-                "http://www.apache.org/licenses/LICENSE-2.0.html",//网站链接
+                //作者
+                contact,
+                //链接显示文字
+                "The Apache License, Version 2.0",
+                //网站链接
+                "http://www.apache.org/licenses/LICENSE-2.0.html",
                 Collections.emptyList()
         );
     }

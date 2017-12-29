@@ -9,3 +9,5 @@
 ## 8.httpclient工具类（线程池版本，支持http、https）
 ## 9.增强了mybatis注解的功能（可以使用list当作参数）
 ## 10.加入了mybatis-generator-maven-plugin，用于根据数据库表结构自动生成实体类以及mapper。
+
+# 此版本使用axon，进行事件驱动

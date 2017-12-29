@@ -12,16 +12,13 @@
         <finalName>springboot-base</finalName>
         <java.version>1.8</java.version>
         <springboot.version>1.5.9.RELEASE</springboot.version>
-        <redis.version>1.8.1.RELEASE</redis.version>
         <swagger-ui.version>2.7.0</swagger-ui.version>
-        <httpclient.version>4.5.2</httpclient.version>
-        <jsoup.version>1.9.2</jsoup.version>
         <mybatis.version>1.2.0</mybatis.version>
         <tkMybatis.version>1.1.0</tkMybatis.version>
         <pageHelper.version>1.1.0</pageHelper.version>
-        <selenium.version>3.3.1</selenium.version>
+        <okHttp.version>3.9.1</okHttp.version>
+        <axon.version>3.1.1</axon.version>
         <java.version>1.8</java.version>
-        <jedis.version>2.9.0</jedis.version>
         <docker.image.prefix>angley</docker.image.prefix>
     </properties>
 
@@ -77,19 +74,6 @@
             <version>${swagger-ui.version}</version>
         </dependency>
 
-        <!-- httpclient -->
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-        </dependency>
-
-        <!-- jsoup -->
-        <dependency>
-            <groupId>org.jsoup</groupId>
-            <artifactId>jsoup</artifactId>
-            <version>${jsoup.version}</version>
-        </dependency>
-
         <!-- mysql -->
         <dependency>
             <groupId>mysql</groupId>
@@ -126,6 +110,20 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
+
+        <!-- axon -->
+        <dependency>
+            <groupId>org.axonframework</groupId>
+            <artifactId>axon-spring-boot-autoconfigure</artifactId>
+            <version>${axon.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>${okHttp.version}</version>
+        </dependency>
+
     </dependencies>
     <!-- 多环境打包 -->
     <profiles>
