@@ -1,6 +1,7 @@
 package cn.ylapl.entity.bank;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.CommandHandler;
@@ -17,8 +18,8 @@ import static org.axonframework.commandhandling.model.AggregateLifecycle.apply;
 /**
  * 银行账户
  *
- * @date: 2017/12/29
- * @time: 下午4:28
+ * date: 2017/12/29
+ * time: 下午4:28
  * @author: Angle
  */
 @Aggregate(repository = "accountRepository")
@@ -26,6 +27,7 @@ import static org.axonframework.commandhandling.model.AggregateLifecycle.apply;
 @Data
 @Accessors(chain = true)
 @Slf4j
+@NoArgsConstructor
 public class BankAccount {
 
     @Id
@@ -53,6 +55,7 @@ public class BankAccount {
         this.balance = new BigDecimal(event.getAmount());
         log.info("Account {} is created with balance {}", accountId, this.balance);
     }
+
     @EventHandler
     public void on(WithdrawnMoneyEvent event) {
 
