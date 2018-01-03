@@ -41,7 +41,6 @@ public class TimeInterceptor {
         long startTime = System.nanoTime();
 
         // 获取执行的方法名
-        long endTime = System.nanoTime();
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         String methodName = signature.getDeclaringTypeName() + "." + signature.getName();
 
@@ -52,6 +51,7 @@ public class TimeInterceptor {
             throw e;
         }
 
+        long endTime = System.nanoTime();
         // 打印耗时的信息
         this.printExecTime(methodName, startTime, endTime);
 
