@@ -22,7 +22,7 @@ import static org.axonframework.commandhandling.model.AggregateLifecycle.apply;
  * time: 下午4:28
  * @author: Angle
  */
-@Aggregate(repository = "accountRepository")
+@Aggregate
 @Entity
 @Data
 @Accessors(chain = true)

@@ -32,7 +32,14 @@ public class BankController {
         String id = IdentifierFactory.getInstance().generateIdentifier();
         CreateAccountCommand command = new CreateAccountCommand(id,"杨乐",1000);
         commandGateway.send(command);
-        commandGateway.send(new WithdrawMoneyCommand(id, 500));
-        commandGateway.send(new WithdrawMoneyCommand(id, 500));
+
+        Thread a1 = new Thread(() -> commandGateway.send(new WithdrawMoneyCommand(id, 500)));
+        Thread a2 = new Thread(() -> commandGateway.send(new WithdrawMoneyCommand(id, 400)));
+        Thread a3 = new Thread(() -> commandGateway.send(new WithdrawMoneyCommand(id, 300)));
+        Thread a4 = new Thread(() -> commandGateway.send(new WithdrawMoneyCommand(id, 200)));
+        a1.start();
+        a2.start();
+        a3.start();
+        a4.start();
     }
 }

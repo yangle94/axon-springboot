@@ -23,5 +23,4 @@ public class WithdrawMoneyCommand {
     private String accountId;
 
     private long amount;
-
 }
