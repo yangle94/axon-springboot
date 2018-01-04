@@ -62,6 +62,7 @@ public class BankAccount {
         BigDecimal result = this.balance.subtract(new BigDecimal(event.getAmount()));
         if(result.compareTo(BigDecimal.ZERO) < 0) {
             log.error("Cannot withdraw more money than the balance!");
+            throw new AssertionError("检测报错机制");
         }
         else {
             this.balance = result;
