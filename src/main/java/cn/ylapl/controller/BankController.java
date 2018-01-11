@@ -26,7 +26,7 @@ public class BankController {
 
     @ApiOperation("创建账户接口")
     @RequestMapping(value = "/create",method = RequestMethod.POST)
-    @Transactional
+//    @Transactional
     public void index() {
         log.debug("创建");
         String id = IdentifierFactory.getInstance().generateIdentifier();
