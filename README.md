@@ -18,11 +18,11 @@
     
     Serializer : XStream(默认)
 ```    
-
 ### 关于事务：
 
    由于在本例中使用的CommandBus为SimpleCommandBus，其中所有的执行操作都会在一个线程中进行，并不会有多线程的缘故，最简单的方法是在需要使用事务的地方直接在方法上加入Spring的@Transactional注解，即可保证事务
    
-### 缺点：
+### 缺点：并发量大可能会导致线程不够
 
-   并发量大可能会导致线程不够，需要在servlet端限制线程数，避免线程过多引发的问题,请参阅jettyConfig.java
+   1. 在servlet端限制线程数。避免线程过多引发的问题,请参阅jettyConfig.java。
+   2. 启用AsynchronousCommandBus，指定线程池。（此版本请将事务控制到command中，所有commond处理与数据库状态修改均在同一个线程中）
